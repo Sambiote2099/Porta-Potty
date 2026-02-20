@@ -76,8 +76,7 @@ export default function Hero() {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-amber-950/30 to-slate-950"
-      style={{ paddingTop: '20px' }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-950 via-teal-950/40 to-slate-950"
     >
       {/* Particle Background */}
       <ParticleBackground />
@@ -86,8 +85,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none"></div>
       
       {/* Floating decorative blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
       
       {/* Main content */}
       <div className="relative w-full h-full flex items-center">
@@ -95,7 +94,7 @@ export default function Hero() {
         <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden">
           {/* Diagonal clip path container */}
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center mt-2"
             style={{
               backgroundImage: "url('https://res.cloudinary.com/diasvvkil/image/upload/v1770717732/BreadVerse/IMG_3121_hituwg.jpg')",
               clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)',
@@ -105,6 +104,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-slate-950/30 to-slate-950/80"></div>
           </div>
           
+          
          
         </div>
 
@@ -113,9 +113,9 @@ export default function Hero() {
           <div className="max-w-2xl space-y-6">
             
             {/* Badge */}
-            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 border border-amber-500/30 rounded-full">
+            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-amber-400 text-sm font-medium">Available for work</span>
+              <span className="text-teal-400 text-sm font-medium">Available for work</span>
             </div>
 
             {/* Title */}
@@ -150,7 +150,7 @@ export default function Hero() {
               
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-600 text-gray-300 hover:border-amber-500 hover:text-amber-400 rounded-lg transition-all font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gray-600 text-gray-300 hover:border-teal-500 hover:text-teal-400 rounded-lg transition-all font-semibold"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -160,7 +160,7 @@ export default function Hero() {
               
               <a
                 href="/resume.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white rounded-lg transition-all transform hover:scale-105 font-semibold shadow-lg shadow-amber-500/30"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white rounded-lg transition-all transform hover:scale-105 font-semibold shadow-lg shadow-teal-500/30"
               >
                 Download Resume
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ export default function Hero() {
                 href="https://linkedin.com/in/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-amber-500/20 hover:border-amber-500/50 hover:bg-amber-500/10 text-gray-400 hover:text-amber-400 rounded-lg transition-all"
+                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-teal-500/20 hover:border-teal-500/50 hover:bg-teal-500/10 text-gray-400 hover:text-teal-400 rounded-lg transition-all"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -187,7 +187,7 @@ export default function Hero() {
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-amber-500/20 hover:border-amber-500/50 hover:bg-amber-500/10 text-gray-400 hover:text-amber-400 rounded-lg transition-all"
+                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-teal-500/20 hover:border-teal-500/50 hover:bg-teal-500/10 text-gray-400 hover:text-teal-400 rounded-lg transition-all"
                 aria-label="GitHub"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -199,7 +199,7 @@ export default function Hero() {
                 href="https://twitter.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-amber-500/20 hover:border-amber-500/50 hover:bg-amber-500/10 text-gray-400 hover:text-amber-400 rounded-lg transition-all"
+                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-teal-500/20 hover:border-teal-500/50 hover:bg-teal-500/10 text-gray-400 hover:text-teal-400 rounded-lg transition-all"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -211,7 +211,7 @@ export default function Hero() {
                 href="https://instagram.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-amber-500/20 hover:border-amber-500/50 hover:bg-amber-500/10 text-gray-400 hover:text-amber-400 rounded-lg transition-all"
+                className="w-10 h-10 flex items-center justify-center bg-slate-800/50 border border-teal-500/20 hover:border-teal-500/50 hover:bg-teal-500/10 text-gray-400 hover:text-teal-400 rounded-lg transition-all"
                 aria-label="Instagram"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

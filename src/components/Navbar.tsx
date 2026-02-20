@@ -4,9 +4,13 @@ import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+      // Check if page is scrolled
+      setIsScrolled(window.scrollY > 50);
+
       const sections = ['home', 'about', 'education', 'projects', 'skills', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
@@ -77,7 +81,11 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
-      <div className="flex items-center justify-between gap-2 px-8 py-4 bg-black/10 backdrop-blur-md border-b border-cyan-500/10 shadow-lg">
+      <div className={`flex items-center justify-between gap-2 px-8 py-4 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/10 backdrop-blur-md border-b border-cyan-500/10 shadow-lg' 
+          : 'bg-transparent'
+      }`}>
         {/* Logo */}
         <div className="flex items-center gap-3">
           <button

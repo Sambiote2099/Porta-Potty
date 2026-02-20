@@ -99,7 +99,7 @@ export default function ParticleBackground() {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = `rgba(251, 191, 36, ${this.opacity})`; // amber-400
+        ctx.fillStyle = `rgba(45, 212, 191, ${this.opacity})`; // teal-400
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -131,7 +131,7 @@ export default function ParticleBackground() {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 120) {
-            ctx.strokeStyle = `rgba(251, 191, 36, ${0.15 * (1 - distance / 120)})`;
+            ctx.strokeStyle = `rgba(45, 212, 191, ${0.15 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particleA.x, particleA.y);

@@ -5,6 +5,7 @@ import Footer from "@/components/ui/footer";
 import SmoothScroll from "@/components/gsap/SmoothScroll";
 import ClickSpark from "@/components/ui/ClickSpark";
 import Navbar from '@/components/Navbar';
+import DynamicScrollbar from '@/components/DynamicScrollbar';
 import {ToastContainer} from "react-toastify"
 
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <DynamicScrollbar />
          <ToastContainer 
               position="top-right"
               autoClose={3000}
