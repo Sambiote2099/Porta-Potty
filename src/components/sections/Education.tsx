@@ -1,0 +1,238 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const education = {
+  degree: 'Bachelor of Science in Computer Science',
+  university: 'North South University',
+  location: 'Dhaka, Bangladesh',
+  period: 'May 2025 - 2029',
+  gpa: '3.59/4.00',
+  description: 'Currently pursuing Computer Science degree focusing on software engineering, data structures, algorithms, and web development. Currently in 2nd semester.',
+  currentFocus: [
+    'Maintaining strong academic performance',
+    'Active participation in programming courses',
+    'Learning modern web development technologies',
+    'Building practical projects alongside studies',
+  ],
+};
+
+const certifications = [
+  {
+    title: 'Programming Hero - Complete Web Development',
+    organization: 'Programming Hero',
+    icon: '🎓',
+    description: 'Comprehensive web development course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB',
+    color: 'from-cyan-500 to-blue-500',
+  },
+  {
+    title: 'IELTS Academic - Band 8.0',
+    organization: 'IDP',
+    icon: '🎯',
+    description: 'International English Language Testing System with overall band score of 8.0',
+    color: 'from-blue-500 to-teal-500',
+  },
+];
+
+export default function Education() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      gsap.from(sectionRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 90%',
+          end: 'top 20%',
+          scrub: 1,
+        },
+        opacity: 0,
+        y: 100,
+      });
+
+      gsap.from('.education-header', {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 70%',
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+      });
+
+      gsap.from('.education-card', {
+        scrollTrigger: {
+          trigger: '.education-card',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        y: 80,
+        duration: 1,
+      });
+
+      gsap.from('.cert-card', {
+        scrollTrigger: {
+          trigger: '.certifications-grid',
+          start: 'top 80%',
+        },
+        opacity: 0,
+        y: 60,
+        duration: 0.8,
+        stagger: 0.2,
+      });
+    }
+  }, []);
+
+  return (
+    <section
+      ref={sectionRef}
+      id="education"
+      className="min-h-screen py-32 relative overflow-hidden"
+     style={{
+  background: 'linear-gradient(135deg, #0d1619 0%, #152125 25%, #1f3035 50%, #0f766e 75%, #2dd4bf 100%)',
+}}
+    >
+      {/* Decorative elements */}
+      <div className="education-blob-1 absolute top-0 right-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl" />
+      <div className="education-blob-2 absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="education-header text-center mb-16">
+          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
+            <span className="text-white text-sm font-medium">Educational Qualifications</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+            Education
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-white/60 to-white/30 mx-auto mb-6"></div>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+            My academic journey and continuous learning path
+          </p>
+        </div>
+
+        {/* Main Education Card */}
+        <div className="education-card max-w-5xl mx-auto mb-20">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* Left - Icon and Basic Info */}
+              <div className="md:col-span-2">
+                <div className="flex items-start gap-6">
+                  {/* Icon */}
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-white/30 to-white/20 border border-white/30 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                    </svg>
+                  </div>
+
+                  {/* Info */}
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-bold text-white mb-2 drop-shadow-md">
+                      {education.degree}
+                    </h3>
+                    <p className="text-white font-semibold mb-3">
+                      {education.university}
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-4 mb-4 text-sm">
+                      <div className="flex items-center gap-2 text-white/80">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {education.location}
+                      </div>
+                      <div className="flex items-center gap-2 text-white/80">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        {education.period}
+                      </div>
+                    </div>
+
+                    <div className="mb-4">
+                      <span className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/20 border border-emerald-400/40 rounded-lg text-emerald-300 font-semibold shadow-lg">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                        </svg>
+                        GPA: {education.gpa}
+                      </span>
+                    </div>
+
+                    <p className="text-white/80 leading-relaxed">
+                      {education.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Current Focus */}
+              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <h4 className="text-lg font-semibold text-white">Current Focus</h4>
+                </div>
+                <ul className="space-y-3">
+                  {education.currentFocus.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-sm text-white/80">
+                      <svg className="w-5 h-5 text-white flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Certifications Section */}
+        <div>
+          <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+            Certifications
+          </h3>
+
+          <div className="certifications-grid grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="cert-card bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all p-6 shadow-2xl"
+              >
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-2xl flex-shrink-0">
+                    {cert.icon}
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-white mb-2 drop-shadow-md">
+                      {cert.title}
+                    </h4>
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                      <span className="text-sm text-white/90 font-medium">{cert.organization}</span>
+                    </div>
+                    <p className="text-white/80 text-sm leading-relaxed">
+                      {cert.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
