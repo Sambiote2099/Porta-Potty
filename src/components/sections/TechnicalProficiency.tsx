@@ -8,50 +8,64 @@ gsap.registerPlugin(ScrollTrigger);
 
 const skillCategories = [
   {
-    title: 'Languages',
-    icon: '🔤',
+    title: 'Programming Languages',
+  
     color: 'yellow',
-    skills: ['C', 'Java', 'JavaScript', 'TypeScript', 'Python', 'C++'],
-  },
-  {
-    title: 'Database & Storage',
-    icon: '💾',
-    color: 'purple',
-    skills: ['MongoDB', 'SQL', 'MySQL', 'SQLite', 'PostgreSQL', 'Database Design', 'Data Modeling'],
+    skills: ['TypeScript', 'JavaScript', 'Python'],
   },
   {
     title: 'Frontend Development',
-    icon: '💻',
+  
     color: 'blue',
-    skills: ['HTML5', 'CSS3', 'React', 'Next.js', 'Angular', 'jQuery', 'Sass', 'Tailwind CSS', 'Bootstrap', 'Chakra UI', 'MUI', 'Redux.js', 'Three.js', 'Electron', 'Redux', 'Responsive Design'],
+    skills: ['GSAP', 'HTML', 'CSS', 'Tailwind V4', 'TypeScript', 'JavaScript', 'PWA'],
   },
   {
     title: 'Backend Development',
-    icon: '⚙️',
+  
     color: 'green',
-    skills: ['Node.js', 'Express.js', 'RESTful APIs', 'FastAPI', 'Authentication & Authorization', 'Server-side Logic', 'Django', 'Flask', 'PHP', 'Socket.io', 'GraphQL'],
+    skills: ['Node.js(Learning)','Spring Boot', 'REST API Development'],
   },
   {
-    title: 'Tools & Technologies',
-    icon: '🔧',
-    color: 'cyan',
-    skills: ['Git & GitHub', 'VS Code', 'Sublime', 'Cursor', 'Framer', 'Figma', 'Wordpress', 'Adobe Photoshop', 'Adobe Illustrator', 'Blender', 'Canva', 'MS Office', 'Word', 'Excel', 'Powerpoint', 'Linux', 'Firebase', 'Postman', 'Docker', 'npm/yarn', 'Webpack'],
+    title: 'Database & Storage',
+ 
+    color: 'purple',
+    skills: ['MySQL', 'MongoDB', 'SQLite'],
   },
   {
-    title: 'Deployment',
-    icon: '🚀',
+    title: 'Authentication & Security',
+   
     color: 'red',
-    skills: ['Vercel', 'Netlify', 'AWS', 'Heroku', 'GitHub Pages', 'Docker'],
+    skills: ['OAuth Implementation', 'Google Login', 'Session-based Auth', 'Token-based Auth'],
+  },
+  {
+    title: 'Deployment & Hosting',
+   
+    color: 'cyan',
+    skills: ['Vercel', 'Netlify', 'Cloudflare', 'Ngrok', 'Production Deployment'],
+  },
+  {
+    title: 'AI & Integration',
+    
+    color: 'indigo',
+    skills: ['Botpress', 'AI Integration'],
+  },
+  {
+    title: 'Frameworks',
+    
+    color: 'indigo',
+    skills: ['Next.JS'],
   },
 ];
 
 const proficiencyLevels = [
-  { name: 'JavaScript', level: 90 },
-  { name: 'React.js', level: 85 },
-  { name: 'Node.js', level: 80 },
-  { name: 'MongoDB', level: 75 },
-  { name: 'CSS/Tailwind', level: 85 },
-  { name: 'Express.js', level: 80 },
+  { name: 'TypeScript', level: 45 },
+  { name: 'GSAP', level: 20 },
+  { name: 'Spring Boot', level: 20 },
+  { name: 'Next.js', level: 56 },
+  { name: 'MongoDB', level: 40 },
+  { name: 'MySQL', level: 45 },
+  { name: 'REST APIs', level: 40 },
+  {name: "Botpress", level: 35}
 ];
 
 const features = [
@@ -61,26 +75,26 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: 'Web Development',
-    description: 'Full-stack web applications with modern frameworks',
+    title: 'Full-Stack Development',
+    description: 'End-to-end application development with modern frameworks',
   },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    title: 'Responsive Design',
-    description: 'Mobile-first approach for all devices',
+    title: 'Secure Authentication',
+    description: 'OAuth and token-based authentication implementation',
   },
   {
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: 'Version Control',
-    description: 'Git workflow and collaborative development',
+    title: 'AI Integration',
+    description: 'Implementing AI features using Botpress and modern tools',
   },
   {
     icon: (
@@ -89,7 +103,7 @@ const features = [
       </svg>
     ),
     title: 'Performance',
-    description: 'Optimized applications for speed and efficiency',
+    description: 'Optimized and scalable application architecture',
   },
 ];
 
@@ -222,7 +236,7 @@ export default function TechnicalProficiency() {
                     </div>
                     <div className="h-2 bg-white/20 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-gradient-to-r from-amber-300 to-yellow-400 rounded-full transition-all duration-1000 shadow-lg"
+                        className="h-full bg-gradient-to-r from-emerald-300 via-teal-500 to-cyan-400 rounded-full transition-all duration-1000 shadow-lg"
                         style={{ width: `${item.level}%` }}
                       />
                     </div>
@@ -236,16 +250,16 @@ export default function TechnicalProficiency() {
               <h3 className="text-xl font-bold text-gray-900 mb-6">Development Stats</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-700 text-sm">Lines of Code</span>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">50K+</span>
+                  <span className="text-gray-700 text-sm">Projects</span>
+                  <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">3+</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-700 text-sm">Built</span>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">15+</span>
+                  <span className="text-gray-700 text-sm">Ongoing</span>
+                  <span className="text-lg font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">1</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-700 text-sm">Consumed</span>
-                  <span className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">∞</span>
+                  <span className="text-gray-700 text-sm">Learning</span>
+                  <span className="text-sm font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Node.JS, Express.JS, AI development</span>
                 </div>
               </div>
             </div>

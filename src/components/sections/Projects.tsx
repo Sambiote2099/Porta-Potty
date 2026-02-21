@@ -8,76 +8,79 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    title: 'YouTube Clone',
+    title: 'DwellUP: Online Realtor Application',
     category: 'Full-Stack',
-    image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80',
-    description: 'A feature-rich YouTube clone application with video streaming capabilities, search functionality, and responsive design. Demonstrates advanced React concepts and API integration.',
-    tech: ['React.js', 'MongoDB', 'Tailwind', 'Responsive'],
-    liveLink: '#',
-    codeLink: '#',
+    images: [
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771669446/screenshot-1771669031205_kbccdq.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771669446/screenshot-1771669060312_mnekst.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771669446/screenshot-1771669089996_jmxkpv.png',
+      "https://res.cloudinary.com/diasvvkil/image/upload/v1771669458/screenshot-1771669216305_uy1ivo.png",
+      "https://res.cloudinary.com/diasvvkil/image/upload/v1771669447/screenshot-1771669111318_slokiz.png",
+      "https://res.cloudinary.com/diasvvkil/image/upload/v1771669471/screenshot-1771669272902_dwhr3f.png",
+    ],
+    description: 'Built a full-stack property listing platform with backend services and MongoDB integration. Implemented authentication, secure routing, and structured scalable frontend using modern web technologies.',
+    tech: ['Spring Boot',"React", 'MySQL', 'REST API', 'PostMan', 'PWA', 'CloudFlare'],
+    liveLink: '',
+    codeLink: 'https://github.com/Sambiote2099/dwellup-backends',
     badge: 'Full-Stack',
   },
   {
-    title: 'CO-CEO Dashboard',
+    title: 'BreadVerse: Online Bread Shop',
     category: 'Full-Stack',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-    description: 'A modern web application showcasing clean design and intuitive features. Built with cutting-edge technologies for optimal performance and user experience.',
-    tech: ['React.js', 'Node.js', 'MongoDB', 'Chart.js'],
-    liveLink: '#',
-    codeLink: '#',
+    images: [
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771670629/screenshot-1771669031206_xrhsnc.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771670628/screenshot-1771670466061_qb19n8.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771670629/screenshot-1771670537431_hj0lbv.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771670630/screenshot-1771670379822_svoxm1.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771670628/screenshot-1771670509874_wxeykj.png',
+      'https://res.cloudinary.com/diasvvkil/image/upload/v1771670629/screenshot-1771670494188_edvuih.png',
+    ],
+    description: 'Developed a dynamic e-commerce platform with integrated frontend and backend APIs. Managed product listings, orders, and authentication. Deployed using Vercel/Netlify.',
+    tech: ['Next.js', 'GSAP', 'MongoDB', 'OAuth 2.0', 'Vercel', 'Botpress'],
+    liveLink: 'https://bread-verse.vercel.app/',
+    codeLink: 'https://github.com/Sambiote2099/BreadVerse',
     badge: 'Full-Stack',
   },
   {
-    title: 'Sweat Factory',
-    category: 'UI/UX',
-    image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
-    description: 'A modern gym + e-commerce website for Sweat Factory, where users can buy memberships and shop supplements like protein bars with a focus on performance and clean UI.',
-    tech: ['Ux', 'JS', 'Jquery', 'MUI', 'Vanguard UI'],
-    liveLink: '#',
-    codeLink: '#',
-    badge: 'UI/UX',
-  },
-  {
-    title: 'Income Expense Tracker',
-    category: 'Frontend Apps',
-    image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80',
-    description: 'A comprehensive finance management application that helps users track their income and expenses with intuitive charts and analytics. Features real-time data visualization and budget management.',
-    tech: ['React.js', 'Chart.js', 'Local Storage', 'CSS3'],
-    liveLink: '#',
-    codeLink: '#',
-    badge: 'Frontend Apps',
-  },
-  {
-    title: 'Weatherly',
-    category: 'Frontend Apps',
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80',
-    description: 'A fully responsive web app that provides real-time weather updates for any city or country using the OpenWeather API. Users can enter a location to instantly view temperature, humidity, and current conditions.',
-    tech: ['HTML', 'CSS3', 'JavaScript'],
-    liveLink: '#',
-    codeLink: '#',
-    badge: 'Frontend Apps',
-  },
-  {
-    title: 'Student Teacher Connect',
+    title: 'Collaborative Project',
     category: 'Full-Stack',
-    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
-    description: 'A fully responsive web app built with React and Node.js that enables teachers to post assignments and students to view them seamlessly. Secured with JWT authentication for safe and efficient access management.',
-    tech: ['React.js', 'Node.js', 'Express.js', 'JWT'],
-    liveLink: '#',
-    codeLink: '#',
-    badge: 'Full-Stack',
+    images: [
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+    ],
+    description: 'Working in a team-based development environment contributing to backend logic and AI feature integration. Participating in feature planning and system design discussions.',
+    tech: ['Node.JS','React','GSAP', 'Team Collaboration', 'Botpress', 'Vercel'],
+    liveLink: '',
+    codeLink: '',
+    badge: 'Ongoing',
   },
 ];
 
-const categories = ['All Projects', 'Full-Stack', 'UI/UX', 'Frontend Apps', 'Backend'];
+const categories = ['All Projects', 'Full-Stack', 'Ongoing'];
 
 export default function Projects() {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeCategory, setActiveCategory] = useState('All Projects');
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: number]: number }>({});
 
   const filteredProjects = activeCategory === 'All Projects' 
     ? projects 
     : projects.filter(p => p.category === activeCategory);
+
+  // Handle image rotation on hover
+  useEffect(() => {
+    if (hoveredProject !== null) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex(prev => {
+          const currentIndex = prev[hoveredProject] || 0;
+          const nextIndex = (currentIndex + 1) % projects[hoveredProject].images.length;
+          return { ...prev, [hoveredProject]: nextIndex };
+        });
+      }, 2000);
+
+      return () => clearInterval(interval);
+    }
+  }, [hoveredProject]);
 
   useEffect(() => {
     if (sectionRef.current) {
@@ -135,7 +138,7 @@ export default function Projects() {
         {/* Header */}
         <div className="projects-header text-center mb-12">
           <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
-            <span className="text-white text-sm font-medium">Projects</span>
+            <span className="text-white text-sm font-medium">My Works</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
             Featured Projects
@@ -153,20 +156,54 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="project-card group bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-2xl"
+              className="project-card hover:mt-2 group bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-2xl"
+              onMouseEnter={() => {
+                setHoveredProject(index);
+                setCurrentImageIndex(prev => ({ ...prev, [index]: 0 }));
+              }}
+              onMouseLeave={() => {
+                setHoveredProject(null);
+                setCurrentImageIndex(prev => ({ ...prev, [index]: 0 }));
+              }}
             >
               {/* Project Image */}
               <div className="relative h-56 overflow-hidden bg-slate-800">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60" />
+                {project.images.map((img, imgIndex) => (
+                  <img
+                    key={imgIndex}
+                    src={img}
+                    alt={`${project.title} - Image ${imgIndex + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-102 ${
+                      (currentImageIndex[index] || 0) === imgIndex
+                        ? 'opacity-100 z-10'
+                        : 'opacity-0 z-0'
+                    }`}
+                  />
+                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent opacity-60 z-20" />
                 
                 {/* Badge */}
-                <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 text-xs font-semibold rounded-full shadow-lg">
+                <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm border border-white/30 text-slate-900 text-xs font-semibold rounded-full shadow-lg z-30">
                   {project.badge}
+                </div>
+
+                {/* Image indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-30">
+                  {project.images.map((_, imgIndex) => (
+                    <button
+                      key={imgIndex}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setCurrentImageIndex(prev => ({ ...prev, [index]: imgIndex }));
+                      }}
+                      className={`transition-all cursor-pointer ${
+                        (currentImageIndex[index] || 0) === imgIndex
+                          ? 'bg-white w-6 h-2'
+                          : 'bg-white/50 w-2 h-2 hover:bg-white/70'
+                      } rounded-full`}
+                      aria-label={`View image ${imgIndex + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
               
@@ -194,28 +231,52 @@ export default function Projects() {
                 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all text-sm font-medium"
-                  >
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Live Demo
-                  </a>
-                  <a
-                    href={project.codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all"
-                    title="View Code"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                  </a>
+                  {project.liveLink ? (
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all text-sm font-medium"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Live Demo
+                    </a>
+                  ) : (
+                    <button
+                      onClick={(e) => e.preventDefault()}
+                      className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all text-sm font-medium cursor-pointer"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      Live Demo
+                    </button>
+                  )}
+                  {project.codeLink ? (
+                    <a
+                      href={project.codeLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 flex items-center justify-center bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all"
+                      title="View Code"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <button
+                      onClick={(e) => e.preventDefault()}
+                      className="w-10 h-10 flex items-center justify-center bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all cursor-pointer"
+                      title="View Code"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

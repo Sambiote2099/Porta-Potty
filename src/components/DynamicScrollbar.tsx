@@ -14,7 +14,7 @@ export default function DynamicScrollbar() {
         { percent: 33, start: '#12be8aff', end: '#71fb9fff' },     // Education - Pink/Rose
         { percent: 50, start: '#059669', end: '#34d3a3ff' },     // Projects - Green/Emerald
         { percent: 60, start: '#411777ff', end: '#8824fbff' },     // Skills - Brown/Amber
-        { percent: 83, start: '#8814b6ff', end: '#266fdcff' },     // Contact - Dark Brown/Red
+        { percent: 83, start: '#6d14b6ff', end: '#7a7d81ff' },     // Contact - Dark Brown/Red
       ];
       
       // Find the current color range

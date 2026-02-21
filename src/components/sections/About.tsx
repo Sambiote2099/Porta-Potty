@@ -8,28 +8,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    title: 'Web Developer Intern',
-    company: 'Isha Immigration',
-    period: 'Oct. 2025 - Present',
-    description: 'Building responsive and user-centric front-end interfaces using HTML, CSS, and JavaScript, while leveraging Python and Google Workspace scripts to streamline data flow from web forms directly into Google Sheets for efficient automation.',
-  },
-  {
-    title: 'Web Developer Intern',
-    company: 'NullClass',
-    period: 'Aug. 2025 - Oct. 2025',
-    description: 'Developing end-to-end web applications using MERN stack, focusing on creating scalable and efficient solutions for various clients.',
-  },
-  {
-    title: 'Web Developer Intern',
-    company: 'Prodigy InfoTech',
-    period: 'July 2025 - Aug. 2025',
-    description: 'Developing end-to-end web applications using MERN stack, focusing on creating scalable and efficient solutions for various clients.',
-  },
-  {
-    title: 'Full Stack Developer',
-    company: 'Personal Projects',
-    period: '2022 - Present',
-    description: 'Built multiple responsive web applications using React.js and modern CSS frameworks, gaining expertise in frontend development.',
+    title: 'Freelancer – Fiverr',
+    company: 'Worked under an Agent',
+    period: 'June 2020 - January 2021',
+    description: 'Mainly did data entry, SEO, and basic image editing to deliver product solutions for clients. Managed and collaborated with small teams of 2–3 members to satisfy client demands.',
   },
 ];
 
@@ -40,8 +22,8 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     ),
-    title: 'Full Stack Expertise',
-    description: 'Proficient in MERN stack with hands-on experience in building end-to-end applications',
+    title: 'Full Stack Development',
+    description: 'Enthusiastic in building end-to-end applications with Next.js, MERN and modern databases',
   },
   {
     icon: (
@@ -49,25 +31,25 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
       </svg>
     ),
-    title: 'Problem Solver',
-    description: 'Focus on creating efficient, scalable solutions that solve real-world problems',
+    title: 'AI Integration',
+    description: 'Experience integrating AI features using Botpress and modern AI tools',
   },
   {
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
-    title: 'Continuous Learner',
-    description: 'Always exploring new technologies and best practices to stay ahead in the field',
+    title: 'Communications',
+    description: 'Proficient in the language of English & comfortable interacting and building friendships with people from different countries and backgrounds',
   },
 ];
 
 const stats = [
-  { value: '8+', label: 'Projects Completed' },
-  { value: '1+', label: 'Years Experience' },
-  { value: '20+', label: 'Technologies' },
-  { value: '100%', label: 'Client Satisfaction' },
+  { value: '3+', label: 'Projects Completed' },
+  { value: '10+', label: 'Technologies' },
+  { value: '6 months', label: 'Work Experience' },
+  { value: '2×', label: 'Client\'s Helped' },
 ];
 
 export default function About() {
@@ -181,22 +163,17 @@ export default function About() {
             
             <div className="space-y-4 text-white/90 leading-relaxed">
               <p>
-                I am a Full Stack Web Developer with expertise in building dynamic, 
-                user-friendly applications using modern frontend and backend technologies. 
-                I focus on creating efficient, scalable, and high-quality solutions.
+                I’m a Computer Science and Engineering student at Bangladesh University of Business and Technology who enjoys building things with code and learning how systems work.
               </p>
               
               <p>
-                I specialize in the MERN stack and have a passion for creating applications 
-                that are not only functional but also provide excellent user experiences. 
-                My journey in web development has been driven by curiosity and the desire 
-                to solve complex problems through code.
+                I work mainly with Next.js, React, and modern databases, and I like experimenting with new ideas such as adding AI features to projects or improving how apps are structured. I still consider myself a learner, and I’m always exploring new technologies and improving my skills through hands-on projects.
               </p>
               
               <p>
-                When I'm not coding, you can find me exploring new technologies, contributing 
-                to open-source projects, or sharing knowledge with the developer community.
+                In my free time, I enjoy tinkering with AI, gaming a bit, gardening, cooking, and working on personal projects.
               </p>
+              <p>I’m looking for opportunities where I can learn, build useful things, and grow as a developer.</p>
             </div>
           </div>
 
@@ -257,7 +234,7 @@ export default function About() {
             <div className="grid grid-cols-2 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 to-red-600 bg-clip-text text-transparent mb-2">
+                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 bg-clip-text text-transparent mb-2">
                     {stat.value}
                   </div>
                   <div className="text-gray-700 text-sm font-medium">

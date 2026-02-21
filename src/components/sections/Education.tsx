@@ -7,34 +7,35 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const education = {
-  degree: 'Bachelor of Science in Computer Science',
-  university: 'North South University',
+  degree: 'Bachelor of Science in Computer Science & Engineering',
+  university: 'Bangladesh University of Business and Technology (BUBT)',
   location: 'Dhaka, Bangladesh',
-  period: 'May 2025 - 2029',
-  gpa: '3.59/4.00',
-  description: 'Currently pursuing Computer Science degree focusing on software engineering, data structures, algorithms, and web development. Currently in 2nd semester.',
+  period: 'Expected Graduation: December 2026',
+  gpa: '3.98/4.00',
+  description: 'Currently in 4th year(Spring 2026 semester). Relevant study subjects include System Design, Software Development Project, Distributed Database Management Systems, and Automata.',
   currentFocus: [
-    'Maintaining strong academic performance',
-    'Active participation in programming courses',
-    'Learning modern web development technologies',
-    'Building practical projects alongside studies',
+    'Polishing Next.js development skills',
+    'Exploring AI creation and integration',
+    'Building collaborative projects with teams',
+    'Contributing to real-world applications',
   ],
 };
 
-const certifications = [
+const achievements = [
   {
-    title: 'Programming Hero - Complete Web Development',
-    organization: 'Programming Hero',
-    icon: '🎓',
-    description: 'Comprehensive web development course covering HTML, CSS, JavaScript, React, Node.js, and MongoDB',
-    color: 'from-cyan-500 to-blue-500',
+    title: '2× Dean\'s Award',
+    icon: '�',
+    description: 'Recognized for outstanding academic performance with Dean\'s Award in multiple semesters',
   },
   {
-    title: 'IELTS Academic - Band 8.0',
-    organization: 'IDP',
-    icon: '🎯',
-    description: 'International English Language Testing System with overall band score of 8.0',
-    color: 'from-blue-500 to-teal-500',
+    title: 'Brainstorming Week Runner Up',
+    icon: '🥈',
+    description: '1st Runner Up in BUBT Brainstorming Week competition (Fall 2024)',
+  },
+  {
+    title: 'Coding Contest 21st Place',
+    icon: '💻',
+    description: 'Secured 21st position in BUBT 2024 Intra University Coding Contest',
   },
 ];
 
@@ -74,9 +75,9 @@ export default function Education() {
         duration: 1,
       });
 
-      gsap.from('.cert-card', {
+      gsap.from('.achievement-card', {
         scrollTrigger: {
-          trigger: '.certifications-grid',
+          trigger: '.achievements-grid',
           start: 'top 80%',
         },
         opacity: 0,
@@ -92,9 +93,9 @@ export default function Education() {
       ref={sectionRef}
       id="education"
       className="min-h-screen py-32 relative overflow-hidden"
-     style={{
-  background: 'linear-gradient(135deg, #0d1619 0%, #152125 25%, #1f3035 50%, #0f766e 75%, #2dd4bf 100%)',
-}}
+      style={{
+        background: 'linear-gradient(135deg, #0d1619 0%, #152125 25%, #1f3035 50%, #0f766e 75%, #2dd4bf 100%)',
+      }}
     >
       {/* Decorative elements */}
       <div className="education-blob-1 absolute top-0 right-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl" />
@@ -161,7 +162,7 @@ export default function Education() {
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                         </svg>
-                        GPA: {education.gpa}
+                        CGPA: {education.gpa}
                       </span>
                     </div>
 
@@ -193,39 +194,31 @@ export default function Education() {
           </div>
         </div>
 
-        {/* Certifications Section */}
+        {/* Achievements Section */}
         <div>
           <h3 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
-            Certifications
+            Achievements
           </h3>
 
-          <div className="certifications-grid grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {certifications.map((cert, index) => (
+          <div className="achievements-grid grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="cert-card bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all p-6 shadow-2xl"
+                className="achievement-card bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl"
               >
-                <div className="flex items-start gap-4">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-2xl flex-shrink-0">
-                    {cert.icon}
-                  </div>
+                {/* Centered Icon */}
+                <div className="flex justify-center mb-4">
+                  
+                </div>
 
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h4 className="text-xl font-bold text-white mb-2 drop-shadow-md">
-                      {cert.title}
-                    </h4>
-                    <div className="flex items-center gap-2 mb-3">
-                      <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                      </svg>
-                      <span className="text-sm text-white/90 font-medium">{cert.organization}</span>
-                    </div>
-                    <p className="text-white/80 text-sm leading-relaxed">
-                      {cert.description}
-                    </p>
-                  </div>
+                {/* Centered Content */}
+                <div className="text-center">
+                  <h4 className="text-xl font-bold text-white mb-3 drop-shadow-md">
+                    {achievement.title}
+                  </h4>
+                  <p className="text-white/80 text-sm leading-relaxed">
+                    {achievement.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -235,4 +228,3 @@ export default function Education() {
     </section>
   );
 }
-
