@@ -59,8 +59,8 @@ export default function ParticleBackground() {
       density: number;
 
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
+        this.x = Math.random() * (canvas?.width || 0);
+        this.y = Math.random() * (canvas?.height || 0);
         this.baseX = this.x;
         this.baseY = this.y;
         this.size = Math.random() * 2 + 0.5;
@@ -71,6 +71,8 @@ export default function ParticleBackground() {
       }
 
       update() {
+        if (!canvas) return;
+        
         if (enableMouseInteraction) {
           // Calculate distance from mouse
           const dx = mouse.x - this.x;
@@ -138,6 +140,8 @@ export default function ParticleBackground() {
     const frameInterval = 1000 / targetFPS;
 
     const animate = (currentTime: number) => {
+      if (!canvas) return;
+      
       const deltaTime = currentTime - lastTime;
       
       if (deltaTime >= frameInterval) {
