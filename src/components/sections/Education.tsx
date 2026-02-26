@@ -88,13 +88,13 @@ export default function Education() {
       }}
     >
       {/* Decorative elements */}
-      <div className="education-blob-1 absolute top-0 right-0 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl" />
+      <div className="education-blob-1 absolute top-26 left-10 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl" />
       <div className="education-blob-2 absolute bottom-0 left-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="education-header text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
+          <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">Educational Qualifications</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
@@ -108,7 +108,7 @@ export default function Education() {
 
         {/* Main Education Card */}
         <div className="education-card max-w-5xl mx-auto mb-20">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl">
+          <div className="bg-white/10 rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl">
             <div className="grid md:grid-cols-3 gap-8">
               {/* Left - Icon and Basic Info */}
               <div className="md:col-span-2">
@@ -174,7 +174,7 @@ export default function Education() {
               </div>
 
               {/* Right - Current Focus */}
-              <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-lg">
+              <div className="bg-white/10 rounded-xl p-6 border border-white/20 shadow-lg">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <h4 className="text-lg font-semibold text-white">Current Focus</h4>
@@ -204,7 +204,7 @@ export default function Education() {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="achievement-card bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl"
+                className="achievement-card bg-white/10 rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl"
               >
                 {/* Centered Icon */}
                 <div className="flex justify-center mb-4">

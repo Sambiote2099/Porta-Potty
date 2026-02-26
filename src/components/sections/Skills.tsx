@@ -108,7 +108,7 @@ export default function Skills() {
 
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
+          <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">Technical Skills</span>
           </div>
           <SplitTextRight className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-lg">
@@ -123,7 +123,7 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="skill-card bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all hover:transform hover:scale-105 shadow-2xl"
+              className="skill-card bg-white/10 p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all hover:transform hover:scale-105 shadow-2xl"
             >
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-14 h-14 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">

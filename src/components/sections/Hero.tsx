@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import gsap from 'gsap';
 import ParticleBackground from '@/components/ParticleBackground';
 import { useGSAP } from '@gsap/react';
@@ -102,12 +103,19 @@ export default function Hero() {
         <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full overflow-hidden">
           {/* Diagonal clip path container */}
           <div 
-            className="absolute inset-0 bg-cover bg-center mt-2"
+            className="absolute inset-0 mt-2"
             style={{
-              backgroundImage: "url('https://res.cloudinary.com/diasvvkil/image/upload/v1770717732/BreadVerse/IMG_3121_hituwg.jpg')",
               clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)',
             }}
           >
+            <Image
+              src="https://res.cloudinary.com/diasvvkil/image/upload/v1770717732/BreadVerse/IMG_3121_hituwg.jpg"
+              alt="Arif Hasan Sameer"
+              fill
+              className="object-cover"
+              priority
+              sizes="50vw"
+            />
             {/* Overlay for better text contrast */}
             <div className="absolute inset-0 bg-gradient-to-l from-transparent via-slate-950/30 to-slate-950/80"></div>
           </div>
@@ -117,11 +125,14 @@ export default function Hero() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20">
           {/* Mobile: Image at top, Desktop: Text only */}
           <div className="lg:hidden mb-8 flex justify-center">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-teal-500/30 shadow-xl">
-              <img
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-teal-500/30 shadow-xl relative">
+              <Image
                 src="https://res.cloudinary.com/diasvvkil/image/upload/v1770717732/BreadVerse/IMG_3121_hituwg.jpg"
                 alt="Arif Hasan Sameer"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                priority
+                sizes="192px"
               />
             </div>
           </div>
@@ -136,7 +147,7 @@ export default function Hero() {
 
             {/* Title */}
             <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Yo, I'm Arif Hasan Sameer
+              Hi, I'm Arif Hasan Sameer
             </h1>
             
             {/* Subtitle */}

@@ -157,13 +157,14 @@ export default function TechnicalProficiency() {
 }}
     >
       {/* Decorative elements */}
-      <div className="tech-blob-1 absolute top-1/4 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
-      <div className="tech-blob-2 absolute bottom-1/4 left-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl" />
+      <div className="tech-blob-1 absolute -top-16 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl" />
+      <div className="tech-blob-1 absolute top-1/4 -right-12 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl" />
+      <div className="tech-blob-2 absolute bottom-1/4 right-20 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="tech-header text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
+          <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">Skills & Expertise</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
@@ -181,7 +182,7 @@ export default function TechnicalProficiency() {
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className="skill-category bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all shadow-2xl"
+                className="skill-category bg-white/10 p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all shadow-2xl"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">{category.icon}</span>
@@ -204,7 +205,7 @@ export default function TechnicalProficiency() {
           {/* Right - Proficiency Levels & Stats */}
           <div className="space-y-6">
             {/* Proficiency Levels */}
-            <div className="proficiency-section bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-2xl">
+            <div className="proficiency-section bg-white/10 p-6 rounded-2xl border border-white/20 shadow-2xl">
               <h3 className="text-xl font-bold text-white mb-6 drop-shadow-md">Proficiency Levels</h3>
               <div className="space-y-5">
                 {proficiencyLevels.map((item, index) => (
@@ -225,7 +226,7 @@ export default function TechnicalProficiency() {
             </div>
 
             {/* Development Stats */}
-            <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
+            <div className="bg-white/95 rounded-2xl p-6 shadow-2xl">
               <h3 className="text-xl font-bold text-gray-900 mb-6">Development Stats</h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
@@ -250,7 +251,7 @@ export default function TechnicalProficiency() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="feature-item bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all text-center shadow-2xl"
+              className="feature-item bg-white/10 p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all text-center shadow-2xl"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                 {feature.icon}

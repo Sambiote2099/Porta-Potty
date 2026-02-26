@@ -129,12 +129,13 @@ export default function Projects() {
     >
       {/* Decorative elements */}
       <div className="projects-blob-1 absolute top-0 left-1/4 w-96 h-96 bg-red-400/10 rounded-full blur-3xl" />
-      <div className="projects-blob-2 absolute bottom-0 right-1/4 w-96 h-96 bg-rose-400/10 rounded-full blur-3xl" />
+      <div className="projects-blob-1 absolute top-[800px] right-1/4 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl" />
+      <div className="projects-blob-2 absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-400/20 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="projects-header text-center mb-12">
-          <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md border border-white/30 rounded-full mb-6">
+          <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">My Works</span>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
@@ -153,7 +154,7 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="project-card hover:mt-2 group bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-2xl"
+              className="project-card hover:mt-2 group bg-white/10 rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-2xl"
               onMouseEnter={() => {
                 setHoveredProject(index);
                 setCurrentImageIndex(prev => ({ ...prev, [index]: 0 }));
@@ -283,7 +284,7 @@ export default function Projects() {
         {/* View More */}
         {filteredProjects.length > 6 && (
           <div className="text-center mt-12">
-            <button className="px-8 py-3 bg-white/10 backdrop-blur-md border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all font-semibold shadow-lg">
+            <button className="px-8 py-3 bg-white/10 border border-white/30 text-white hover:border-white/50 hover:bg-white/20 rounded-lg transition-all font-semibold shadow-lg">
               Load More Projects
             </button>
           </div>
