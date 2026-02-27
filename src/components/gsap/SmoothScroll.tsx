@@ -24,12 +24,12 @@ export default function SmoothScroll({
     if (isMobile || isTouchDevice) return;
 
     const smoother = ScrollSmoother.create({
-      wrapper: wrapperRef.current!,
-      content: contentRef.current!,
-      smooth: 1.5,
-      effects: true,
-      normalizeScroll: true,
-      ignoreMobileResize: true,
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 2,
+      ignoreMobileResize:true,
+      effects:true,
+      normalizeScroll:true
     })
 
     return () => {
@@ -38,8 +38,8 @@ export default function SmoothScroll({
   }, [])
 
   return (
-    <div ref={wrapperRef} id="smooth-wrapper" style={{ width: '100%', overflowX: 'hidden' }}>
-      <div ref={contentRef} id="smooth-content" style={{ width: '100%', overflowX: 'hidden' }}>
+    <div id="smooth-wrapper" >
+      <div id="smooth-content" >
         {children}
       </div>
     </div>
