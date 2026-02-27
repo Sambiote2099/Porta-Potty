@@ -54,6 +54,11 @@ const stats = [
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const storyRef = useRef<HTMLDivElement>(null);
+  const experienceRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const statsRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -77,17 +82,18 @@ export default function About() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: "play none none reverse"
+            end:'bottom bottom',
+            scrub:1
           },
           defaults: { ease: 'power3.out' }
         });
 
-        tl.from(sectionRef.current, { opacity: 0, y: 100 })
-          .from('.about-header', { opacity: 0, y: 50 }, '-=0.4')
-          .from('.story-content', { opacity: 0, x: -50 }, '-=0.3')
-          .fromTo('.experience-item', { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.8, stagger: 0.2 }, '-=0.5')
-          .fromTo('.feature-card', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.2')
-          .from('.stats-card', { opacity: 0, scale: 0.9 }, '-=0.4');
+        tl.from(sectionRef.current, { opacity: 0, y: 150 })
+          .from(headerRef.current, { opacity: 0, y: -50 }, '-=0.1')
+          .from(storyRef.current, { opacity: 0, x: -50 }, '-=0.2')
+          .fromTo(experienceRefs.current.filter(Boolean), { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.8, stagger: 0.4 }, '-=0.8')
+          .fromTo(featureRefs.current.filter(Boolean), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.2')
+          .from(statsRef.current, { opacity: 0, scale: 0.9 }, '-=0.8');
       }
     }
   }, { dependencies: [sectionRef] });
@@ -108,7 +114,7 @@ export default function About() {
 
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="about-header text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">About Me</span>
           </div>
@@ -123,7 +129,7 @@ export default function About() {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Left - My Story */}
-          <div className="story-content bg-white/10 p-8 rounded-2xl border border-white/20 shadow-2xl">
+          <div ref={storyRef} className="bg-white/10 p-8 rounded-2xl border border-white/20 shadow-2xl">
             <div className="flex items-center gap-3 mb-6">
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -159,7 +165,8 @@ export default function About() {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="experience-item bg-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all shadow-lg"
+                ref={(el) => (experienceRefs.current[index] = el)}
+                className="bg-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-full bg-white/20 border-2 border-white/40 flex items-center justify-center flex-shrink-0 mt-1">
@@ -184,7 +191,8 @@ export default function About() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="feature-card bg-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all shadow-lg"
+                ref={(el) => (featureRefs.current[index] = el)}
+                className="bg-white/10 p-6 rounded-xl border border-white/20 hover:border-white/40 transition-all shadow-lg"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-white/20 border border-white/30 flex items-center justify-center text-white flex-shrink-0">
@@ -200,7 +208,7 @@ export default function About() {
           </div>
 
           {/* Right - Stats Card */}
-          <div className="stats-card bg-[#1c1c1c] rounded-2xl p-8 shadow-2xl">
+          <div ref={statsRef} className="bg-[#1c1c1c] rounded-2xl p-8 shadow-2xl">
             <div className="grid grid-cols-2 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">

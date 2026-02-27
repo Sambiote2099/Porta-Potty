@@ -9,6 +9,12 @@ import { useGSAP } from '@gsap/react';
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const ctaButtonsRef = useRef<HTMLDivElement>(null);
+  const socialLinksRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -20,14 +26,13 @@ export default function Hero() {
       // Desktop animations
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       
-      tl.from('.hero-badge', { opacity: 0, y: 20, duration: 0.6 })
-        .from('.hero-title', { opacity: 0, y: 30, duration: 0.8 }, '-=0.3')
-        .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
-        .from('.hero-description', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
-        .from('.tech-stack', { opacity: 0, y: 20, duration: 0.6 }, '-=0.2')
-        .from('.cta-buttons', { opacity: 0, y: 20, duration: 0.6 }, '-=0.2')
-        .from('.social-links', { opacity: 0, y: 20, duration: 0.6 }, '-=0.2')
-        .from('.hero-image-container', { opacity: 0, x: 50, duration: 1 }, '-=0.8');
+      tl.from(badgeRef.current, { opacity: 0, y: 20, duration: 0.6 })
+        .from(titleRef.current, { opacity: 0, y: 30, duration: 0.8 }, '-=0.3')
+        .from(subtitleRef.current, { opacity: 0, y: 20, duration: 0.6 }, '-=0.4')
+        .from(descriptionRef.current, { opacity: 0, y: 20, duration: 0.6 }, '-=0.3')
+        .from(ctaButtonsRef.current, { opacity: 0, y: 20, duration: 0.6 }, '-=0.2')
+        .from(socialLinksRef.current, { opacity: 0, y: 20, duration: 0.6 }, '-=0.2')
+        .from(imageContainerRef.current, { opacity: 0, x: 50, duration: 1 }, '-=0.8');
     }
 
     // Mouse interaction for floating shapes - ONLY on desktop
@@ -140,29 +145,29 @@ export default function Hero() {
           <div className="max-w-2xl space-y-6 lg:space-y-6">
             
             {/* Badge */}
-            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full">
+            <div ref={badgeRef} className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500/10 border border-teal-500/30 rounded-full">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
               <span className="text-teal-400 text-sm font-medium">Available for Work</span>
             </div>
 
             {/* Title */}
-            <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
+            <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Hi, I'm Arif Hasan Sameer
             </h1>
             
             {/* Subtitle */}
-            <p className="hero-subtitle text-xl sm:text-2xl md:text-3xl font-semibold text-gray-400">
+            <p ref={subtitleRef} className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-400">
               Software Developer | CSE Student
             </p>
             
             {/* Description */}
-            <p className="hero-description text-base sm:text-lg text-gray-400 max-w-2xl leading-relaxed">
+            <p ref={descriptionRef} className="text-base sm:text-lg text-gray-400 max-w-2xl leading-relaxed">
               Driven Computer Science and Engineering student seeking opportunities to contribute to real-world projects using full-stack technologies, modern frameworks, and AI integration. Passionate about building scalable web applications and deploying production-ready solutions.
             </p>
 
            
             {/* CTA Buttons */}
-            <div className="cta-buttons flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <div ref={ctaButtonsRef} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <button
                 onClick={() => {
                   const element = document.getElementById('projects');
@@ -207,7 +212,7 @@ export default function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="social-links flex gap-3 sm:gap-4 justify-center sm:justify-start">
+            <div ref={socialLinksRef} className="flex gap-3 sm:gap-4 justify-center sm:justify-start">
               <a
                 href="https://www.linkedin.com/in/arif-hasan-sameer-632592316/"
                 target="_blank"

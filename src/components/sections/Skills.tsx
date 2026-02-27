@@ -59,6 +59,8 @@ const skillCategories = [
 
 export default function Skills() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const skillCardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const skillBarRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -82,14 +84,15 @@ export default function Skills() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: "play none none reverse"
+             end:'bottom bottom',
+            scrub:1
           },
           defaults: { ease: 'power3.out' }
         });
 
         tl.fromTo(sectionRef.current, { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 0.8 })
-          .fromTo('.skill-card', { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.4')
-          .fromTo('.skill-bar-fill', { width: 0 }, { width: '100%', duration: 1.2, stagger: 0.1, ease: 'power2.out' }, '-=0.6');
+          .fromTo(skillCardRefs.current.filter(Boolean), { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.4')
+          .fromTo(skillBarRefs.current.filter(Boolean), { width: 0 }, { width: '100%', duration: 1.2, stagger: 0.1, ease: 'power2.out' }, '-=0.6');
       }
     }
  }, { dependencies: [sectionRef] });
@@ -123,7 +126,8 @@ export default function Skills() {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="skill-card bg-white/10 p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all hover:transform hover:scale-105 shadow-2xl"
+              ref={(el) => (skillCardRefs.current[index] = el)}
+              className="bg-white/10 p-8 rounded-2xl border border-white/20 hover:border-white/40 transition-all hover:transform hover:scale-105 shadow-2xl"
             >
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-14 h-14 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
@@ -135,20 +139,24 @@ export default function Skills() {
               </div>
               
               <div className="space-y-5">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-white/90 font-medium">{skill.name}</span>
-                      <span className="text-white text-sm font-semibold">{skill.level}%</span>
+                {category.skills.map((skill, skillIndex) => {
+                  const barIndex = index * category.skills.length + skillIndex;
+                  return (
+                    <div key={skillIndex}>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-white/90 font-medium">{skill.name}</span>
+                        <span className="text-white text-sm font-semibold">{skill.level}%</span>
+                      </div>
+                      <div className="h-2 bg-white/20 rounded-full overflow-hidden">
+                        <div
+                          ref={(el) => (skillBarRefs.current[barIndex] = el)}
+                          className="h-full bg-gradient-to-r from-amber-300 to-orange-400 rounded-full shadow-lg"
+                          style={{ width: `${skill.level}%` }}
+                        />
+                      </div>
                     </div>
-                    <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                      <div
-                        className="skill-bar-fill h-full bg-gradient-to-r from-amber-300 to-orange-400 rounded-full shadow-lg"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}

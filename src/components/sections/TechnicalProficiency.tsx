@@ -110,6 +110,10 @@ const features = [
 
 export default function TechnicalProficiency() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const skillCategoryRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const proficiencyBarRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -133,16 +137,17 @@ export default function TechnicalProficiency() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: "play none none reverse"
+             end:'bottom bottom',
+            scrub:1
           },
           defaults: { ease: 'power3.out' }
         });
 
-        tl.from(sectionRef.current, { opacity: 0, y: 100 })
-          .from('.tech-header', { opacity: 0, y: 50 }, '-=0.4')
-          .fromTo('.skill-category', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.15 }, '-=0.3')
-          .fromTo('.proficiency-bar', { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.6, stagger: 0.1 }, '-=0.4')
-          .fromTo('.feature-item', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.2 }, '-=0.4');
+        tl.from(sectionRef.current, { opacity: 0, y: -100 })
+          .from(headerRef.current, { opacity: 0, y: 50 }, '+=0.4')
+          .fromTo(skillCategoryRefs.current.filter(Boolean), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.15 }, '-=0.3')
+          .fromTo(proficiencyBarRefs.current.filter(Boolean), { opacity: 0, x: 50 }, { opacity: 1, x: 0, stagger: 0.1 }, '-=1.5')
+          .fromTo(featureRefs.current.filter(Boolean), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.2 }, '-=0.4');
       }
     }
 }, { dependencies: [sectionRef] });
@@ -163,7 +168,7 @@ export default function TechnicalProficiency() {
 
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="tech-header text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">Skills & Expertise</span>
           </div>
@@ -182,7 +187,8 @@ export default function TechnicalProficiency() {
             {skillCategories.map((category, index) => (
               <div
                 key={index}
-                className="skill-category bg-white/10 p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all shadow-2xl"
+                ref={(el) => (skillCategoryRefs.current[index] = el)}
+                className="bg-white/10 p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all shadow-2xl"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-2xl">{category.icon}</span>
@@ -209,7 +215,7 @@ export default function TechnicalProficiency() {
               <h3 className="text-xl font-bold text-white mb-6 drop-shadow-md">Proficiency Levels</h3>
               <div className="space-y-5">
                 {proficiencyLevels.map((item, index) => (
-                  <div key={index} className="proficiency-bar">
+                  <div key={index} ref={(el) => (proficiencyBarRefs.current[index] = el)}>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-white/90 font-medium text-sm">{item.name}</span>
                       <span className="text-white text-sm font-semibold">{item.level}%</span>
@@ -251,7 +257,8 @@ export default function TechnicalProficiency() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="feature-item bg-white/10 p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all text-center shadow-2xl"
+              ref={(el) => (featureRefs.current[index] = el)}
+              className="bg-white/10 p-6 rounded-2xl border border-white/20 hover:border-white/40 transition-all text-center shadow-2xl"
             >
               <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-white/20 border border-white/30 flex items-center justify-center text-white">
                 {feature.icon}

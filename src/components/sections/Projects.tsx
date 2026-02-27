@@ -60,6 +60,8 @@ const categories = ['All Projects', 'Full-Stack', 'Ongoing'];
 
 export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeCategory, setActiveCategory] = useState('All Projects');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<{ [key: number]: number }>({});
@@ -105,14 +107,15 @@ export default function Projects() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: "play none none reverse"
+             end:'bottom bottom',
+            scrub:1
           },
           defaults: { ease: 'power3.out' }
         });
 
-        tl.from(sectionRef.current, { opacity: 0, y: 100 })
-          .from('.projects-header', { opacity: 0, y: 50 },  '-=0.4')
-          .fromTo('.project-card', { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.3');
+        tl.from(sectionRef.current, { opacity: 0, x: 1000 })
+          .from(headerRef.current, { opacity: 0, x: -50 },  '-=0.2')
+          .fromTo(projectRefs.current.filter(Boolean), { opacity: 0, y: 80 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.6');
       }
     }
  }, { dependencies: [sectionRef] });
@@ -134,7 +137,7 @@ export default function Projects() {
 
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="projects-header text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12">
           <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">My Works</span>
           </div>
@@ -154,7 +157,8 @@ export default function Projects() {
           {filteredProjects.map((project, index) => (
             <div
               key={index}
-              className="project-card hover:mt-2 group bg-white/10 rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-2xl"
+              ref={(el) => (projectRefs.current[index] = el)}
+              className="hover:mt-2 group bg-white/10 rounded-2xl overflow-hidden border border-white/20 hover:border-white/40 transition-all shadow-2xl"
               onMouseEnter={() => {
                 setHoveredProject(index);
                 setCurrentImageIndex(prev => ({ ...prev, [index]: 0 }));

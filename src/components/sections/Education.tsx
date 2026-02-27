@@ -42,6 +42,9 @@ const achievements = [
 
 export default function Education() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const educationCardRef = useRef<HTMLDivElement>(null);
+  const achievementRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useGSAP(() => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -65,15 +68,16 @@ export default function Education() {
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
-            toggleActions: "play none none reverse"
+             end:'bottom bottom',
+            scrub:1
           },
           defaults: { ease: 'power3.out' }
         });
 
-        tl.from(sectionRef.current, { opacity: 0, y: 100 })
-          .from('.education-header', { opacity: 0, y: 50 }, '-=0.4')
-          .from('.education-card', { opacity: 0, y: 80 },  '-=0.3')
-          .fromTo('.achievement-card', { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.4');
+        tl.from(sectionRef.current, { opacity: 0, x: -1000 })
+          .from(headerRef.current, { opacity: 0, x: 50 }, '-=0.1')
+          .from(educationCardRef.current, { opacity: 0, y: 80 },  '-=0.3')
+          .fromTo(achievementRefs.current.filter(Boolean), { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.2 }, '-=0.4');
       }
     }
   }, { dependencies: [sectionRef] });
@@ -93,7 +97,7 @@ export default function Education() {
 
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="education-header text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-white/10 border border-white/30 rounded-full mb-6">
             <span className="text-white text-sm font-medium">Educational Qualifications</span>
           </div>
@@ -107,7 +111,7 @@ export default function Education() {
         </div>
 
         {/* Main Education Card */}
-        <div className="education-card max-w-5xl mx-auto mb-20">
+        <div ref={educationCardRef} className="max-w-5xl mx-auto mb-20">
           <div className="bg-white/10 rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl">
             <div className="grid md:grid-cols-3 gap-8">
               {/* Left - Icon and Basic Info */}
@@ -204,7 +208,8 @@ export default function Education() {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className="achievement-card bg-white/10 rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl"
+                ref={(el) => (achievementRefs.current[index] = el)}
+                className="bg-white/10 rounded-2xl border border-white/20 hover:border-white/40 transition-all p-8 shadow-2xl"
               >
                 {/* Centered Icon */}
                 <div className="flex justify-center mb-4">
