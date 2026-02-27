@@ -129,7 +129,7 @@ export default function TechnicalProficiency() {
           },
           opacity: 0,
           duration: 2,
-          ease: 'power2.out',
+          ease: 'power4.out',
         });
       } else {
         // Desktop: Single timeline with one ScrollTrigger
@@ -143,8 +143,8 @@ export default function TechnicalProficiency() {
           defaults: { ease: 'power3.out' }
         });
 
-        tl.from(sectionRef.current, { opacity: 0, y: -100 })
-          .from(headerRef.current, { opacity: 0, y: 50 }, '+=0.4')
+        tl.from(sectionRef.current, { opacity: 0, y: -100, x:-100 })
+          .from(headerRef.current, { opacity: 0, y: 50,x:50 }, '+=0.4')
           .fromTo(skillCategoryRefs.current.filter(Boolean), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.15 }, '-=0.3')
           .fromTo(proficiencyBarRefs.current.filter(Boolean), { opacity: 0, x: 50 }, { opacity: 1, x: 0, stagger: 0.1 }, '-=1.5')
           .fromTo(featureRefs.current.filter(Boolean), { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.2 }, '-=0.4');

@@ -99,7 +99,8 @@ export default function Projects() {
           },
           opacity: 0,
           duration: 2,
-          ease: 'power2.out',
+          x:100,
+          ease: 'power4.out',
         });
       } else {
         // Desktop: Single timeline with one ScrollTrigger

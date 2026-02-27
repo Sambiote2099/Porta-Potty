@@ -34,7 +34,7 @@ export default function Contact() {
           },
           opacity: 0,
           duration: 2,
-          ease: 'power2.out',
+          ease: 'power4.out',
         });
       } else {
         // Desktop: Single timeline with one ScrollTrigger
